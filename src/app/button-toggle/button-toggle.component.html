@@ -1,0 +1,78 @@
+<br><br><br><br>
+
+<h2>Example 1</h2>
+<!-- true false buttton -->
+<mat-button-toggle #mytoggal color="primary">{{mytoggal.checked? 'aActive' : 'inactive' }} </mat-button-toggle>
+<br>
+{{mytoggal.checked}}
+<br><br>
+
+
+<h2>Example 2</h2>
+<!-- right left center justify -->
+<mat-button-toggle-group #group="matButtonToggleGroup">
+    <mat-button-toggle value="left" aria-label="Text align left">
+      <mat-icon>format_align_left</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="center" aria-label="Text align center">
+      <mat-icon>format_align_center</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="right" aria-label="Text align right">
+      <mat-icon>format_align_right</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="justify" aria-label="Text align justify">
+      <mat-icon>format_align_justify</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <div class="example-selected-value">Selected value: {{group.value}}</div>
+  <br>
+  {{group.value}}
+  <br>
+  <p [style.text-align]="group.value">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, id itaque debitis laborum cupiditate eum ut ab voluptatem sed ea quos sunt iusto laudantium eius nisi, tempore maxime incidunt, porro quidem corrupti aliquam dolorem reiciendis quis. Delectus eveniet eius, labore asperiores obcaecati impedit sint illo eaque facilis! Enim libero suscipit odio molestias iusto unde adipisci voluptatum exercitationem, excepturi distinctio veniam quam omnis. Dolore totam, labore beatae natus dignissimos ut nisi laboriosam? Odio rem quod, voluptatem maiores numquam, vero eaque sunt in laboriosam, sequi harum eum deleniti enim earum provident non optio officia saepe cum. Quaerat dolorum exercitationem ut odit inventore.</p>
+
+  
+<h2>Example 3</h2>
+<!-- singl select -->
+  <h3>Single selection</h3>
+  <mat-button-toggle-group  #group2="matButtonToggleGroup" >
+    <mat-button-toggle value="red">Red</mat-button-toggle>
+    <mat-button-toggle value="green">Green</mat-button-toggle>
+    <mat-button-toggle value="blue">Blue</mat-button-toggle>
+</mat-button-toggle-group>
+<br>{{group2.value}}<br>
+
+<!-- multiple select -->
+  <h3>Multiple selection</h3>
+  <mat-button-toggle-group  #group3="matButtonToggleGroup" multiple>
+    <mat-button-toggle value="react">react</mat-button-toggle>
+    <mat-button-toggle value="angular">angular</mat-button-toggle>
+    <mat-button-toggle value="typescript">typescript</mat-button-toggle>
+  </mat-button-toggle-group>
+  <br>{{group3.value}}<br>
+  
+
+
+
+  <h2>Example 4</h2>
+<!--  Template-driven form -->
+  <section>
+    <h4>Button Toggle inside of a Template-driven form</h4>
+    <mat-button-toggle-group [(ngModel)]="fontStyle" aria-label="Font Style">
+      <mat-button-toggle value="bold">Bold</mat-button-toggle>
+      <mat-button-toggle value="italic">Italic</mat-button-toggle>
+      <mat-button-toggle value="underline">Underline</mat-button-toggle>
+    </mat-button-toggle-group>
+    <p>Chosen value is {{fontStyle}}</p>
+  </section>
+  
+  <!-- Reactive form -->
+  <section>
+    <h4>Button Toggle inside of a Reactive form</h4>
+    <mat-button-toggle-group [formControl]="fontStyleControl" aria-label="Font Style">
+      <mat-button-toggle value="bold">Bold</mat-button-toggle>
+      <mat-button-toggle value="italic">Italic</mat-button-toggle>
+      <mat-button-toggle value="underline">Underline</mat-button-toggle>
+    </mat-button-toggle-group>
+    <p>Chosen value is {{fontStyleControl.value}}</p>
+  </section>
+  
